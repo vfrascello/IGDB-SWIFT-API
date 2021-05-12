@@ -13,8 +13,9 @@ import Just
 public class IGDBWrapper {
     private var APIURL: URL
     private var requestHeaders = ["x-user-agent": "igdb-api-swift"]
-    public init(clientID: String, accessToken: String) {
+    public init(apiURL: URL, clientID: String, accessToken: String) {
         requestHeaders = ["x-user-agent": "igdb-api-swift", "client-id": clientID, "authorization": "Bearer \(accessToken)"]
+        APIURL = apiURL
     }
     
     public func apiProtoRequest(endpoint: Endpoint, apicalypseQuery: String, dataResponse: @escaping (Data) -> (Void), errorResponse: @escaping (RequestException) -> (Void)) {
