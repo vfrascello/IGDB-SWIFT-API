@@ -14,7 +14,7 @@ public class IGDBWrapper {
     private var APIURL: String
     private var requestHeaders = ["x-user-agent": "igdb-api-swift"]
     public init(apiURL: String, clientID: String, accessToken: String) {
-        requestHeaders = ["x-user-agent": "igdb-api-swift", "client-id": clientID, "authorization": "Bearer \(accessToken)"]
+        requestHeaders = ["x-user-agent": "igdb-api-swift"]
         APIURL = apiURL
     }
     
